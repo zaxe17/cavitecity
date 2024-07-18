@@ -1,0 +1,404 @@
+/* Google Fonts Import Link */
+@import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+body {
+    overflow: hidden;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 400px;
+    background: #A77B5C;
+    z-index: 100;
+    transition: all 0.5s ease;
+}
+
+.sidebar.close {
+    width: 78px;
+}
+
+.sidebar .logo-details {
+    height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar .logo-details i {
+    font-size: 30px;
+    color: #fff;
+    height: 50px;
+    min-width: 78px;
+    text-align: center;
+    line-height: 50px;
+}
+
+.sidebar .logo-details .logo_name {
+    font-size: 22px;
+    color: #fff;
+    font-weight: 600;
+    transition: 0.3s ease;
+    transition-delay: 0.1s;
+}
+
+.sidebar.close .logo-details .logo_name {
+    transition-delay: 0s;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.sidebar .nav-links {
+    height: 100%;
+    padding: 30px 0 150px 0;
+    overflow: auto;
+}
+
+.sidebar.close .nav-links {
+    overflow: visible;
+}
+
+.sidebar .nav-links::-webkit-scrollbar {
+    display: none;
+}
+
+.sidebar .nav-links li {
+    position: relative;
+    list-style: none;
+    transition: all 0.4s ease;
+    white-space: nowrap;
+}
+
+.sidebar .nav-links li:hover {
+    background: #d6a98d;
+}
+
+.sidebar .nav-links li .iocn-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sidebar.close .nav-links li .iocn-link {
+    display: block
+}
+
+.sidebar .nav-links li i {
+    height: 50px;
+    min-width: 78px;
+    text-align: center;
+    line-height: 50px;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.sidebar .nav-links li.showMenu i.arrow {
+    transform: rotate(-180deg);
+}
+
+.sidebar.close .nav-links i.arrow {
+    display: none;
+}
+
+.sidebar .nav-links li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+/* ACTIVE NAVIGATION BAR */
+.sidebar .nav-links li a.active {
+    background: #d6a98d;
+}
+
+.sidebar .nav-links li a .link_name {
+    font-size: 18px;
+    font-weight: 400;
+    color: #fff;
+    transition: all 0.4s ease;
+}
+
+.sidebar .nav-links li a.active .link_name,
+.sidebar .nav-links li a:hover .link_name {
+    margin-left: 15px;
+}
+
+.sidebar.close .nav-links li a .link_name {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.sidebar .nav-links li .sub-menu {
+    padding: 6px 6px 14px 80px;
+    margin-top: -10px;
+    background: #c49b81;
+    display: none;
+}
+
+.sidebar .nav-links li.showMenu .sub-menu {
+    display: block;
+}
+
+.sidebar .nav-links li .sub-menu a {
+    color: #fff;
+    font-size: 15px;
+    padding: 5px 0;
+    white-space: nowrap;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+.sidebar .nav-links li .sub-menu a:hover {
+    opacity: 1;
+}
+
+.sidebar.close .nav-links li .sub-menu {
+    position: absolute;
+    left: 100%;
+    top: -10px;
+    margin-top: 0;
+    padding: 10px 20px;
+    border-radius: 0 6px 6px 0;
+    opacity: 0;
+    display: block;
+    pointer-events: none;
+    transition: 0s;
+}
+
+.sidebar.close .nav-links li:hover .sub-menu {
+    top: 0;
+    opacity: 1;
+    pointer-events: auto;
+    transition: all 0.4s ease;
+}
+
+.sidebar .nav-links li .sub-menu .link_name {
+    display: none;
+}
+
+.sidebar.close .nav-links li .sub-menu .link_name {
+    font-size: 18px;
+    opacity: 1;
+    display: block;
+}
+
+.sidebar .nav-links li .sub-menu.blank {
+    opacity: 1;
+    pointer-events: auto;
+    padding: 3px 20px 6px 16px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.sidebar .nav-links li:hover .sub-menu.blank {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.home-section {
+    position: relative;
+    background: linear-gradient(40deg, rgba(170, 141, 107, 0.5), rgba(170, 141, 107, 0.6), rgba(164, 131, 98, 0.7), rgba(164, 131, 98, 0.8), rgba(138, 102, 76, 0.9), rgba(138, 102, 76, 1)), url("./assets/background-kuno-7.jpg") no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    height: 100vh;
+    left: 400px;
+    width: calc(100% - 400px);
+    transition: all 0.5s ease;
+    padding: 12px;
+}
+
+.sidebar.close~.home-section {
+    left: 78px;
+    width: calc(100% - 78px);
+}
+
+.home-content {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.home-section .home-content .bx-menu,
+.home-section .home-content .text {
+    color: #11101d;
+    font-size: 35px;
+}
+
+.home-section .home-content .bx-menu {
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.home-section .home-content .text {
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.home-section .content {
+    padding: 50px;
+    display: flex;
+    height: 88%;
+    align-items: center;
+}
+
+.home-section .image-content {
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(150px, 1fr));
+    grid-template-rows: repeat(2, minmax(150px, 1fr));
+    margin-right: 20px;
+    gap: 5px;
+}
+
+.home-section .image-content img,
+.home-section .image-content iframe {
+    width: 380px;
+    height: 350px;
+    border-radius: 25px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease;
+    transform: scale(0.5);
+    opacity: 0;
+    filter: blur(10px);
+    border: 0;
+    object-fit: cover;
+}
+
+.sidebar.close~.home-section .image-content img,
+.sidebar.close~.home-section .image-content iframe {
+    width: 460px;
+    height: 370px;
+}
+
+
+.home-section.show-animate .image-content img,
+.home-section.show-animate .image-content iframe {
+    animation: image-animate 0.8s ease forwards;
+    animation-delay: calc(.1s * var(--i));
+}
+
+@keyframes image-animate {
+    100% {
+        transform: scale(1);
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
+.home-section .content-text {
+    margin-right: 1rem;
+    padding: 2rem;
+    border-radius: 25px;
+    background: linear-gradient(40deg, rgba(210, 174, 132, 0.5), rgba(210, 174, 132, 0.6), rgba(196, 156, 117, 0.7), rgba(196, 156, 117, 0.8), rgba(167, 123, 92, 0.9), rgba(167, 123, 92, 1));
+    box-shadow: 10px 10px 15px 3px rgba(0, 0, 0, 0.5);
+    text-align: justify;
+    flex-basis: 50%;
+    transition: all 0.3s ease;
+    opacity: 0;
+    height: 88%;
+    overflow-y: scroll;
+}
+
+.show-animate .content-text {
+    animation: text-animate 0.8s ease forwards;
+    animation-delay: calc(.1s * var(--i));
+}
+
+@keyframes text-animate {
+    100% {
+        opacity: 1;
+    }
+}
+
+.sidebar.close~.home-section .content-text {
+    height: 100%;
+}
+
+.home-section .content-text::-webkit-scrollbar {
+    display: none;
+}
+
+.home-section .content-text h1 {
+    font-family: "Edu AU VIC WA NT Hand", cursive;
+    text-transform: capitalize;
+    font-size: 3rem;
+    line-height: 5rem;
+    transform: scale(0.5);
+    opacity: 0;
+    filter: blur(10px);
+}
+
+.show-animate .content-text h1 {
+    animation: text-animate 0.8s ease forwards;
+    animation-delay: calc(.1s * var(--i));
+}
+
+@keyframes text-animate {
+    100% {
+        transform: scale(1);
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
+.home-section .content-text p {
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 400px) {
+    .sidebar {
+        width: 240px;
+    }
+
+    .sidebar.close {
+        width: 78px;
+    }
+
+    .sidebar .profile-details {
+        width: 240px;
+    }
+
+    .sidebar.close .profile-details {
+        background: none;
+    }
+
+    .sidebar.close .profile-details {
+        width: 78px;
+    }
+
+    .home-section {
+        left: 240px;
+        width: calc(100% - 240px);
+    }
+
+    .sidebar.close~.home-section {
+        left: 78px;
+        width: calc(100% - 78px);
+    }
+}
